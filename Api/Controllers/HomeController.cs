@@ -9,11 +9,18 @@ namespace Api.Controllers
 {
     public class HomeController : Controller
     {
-        [Authorize]
+        [Authorize(Policy = "Api1Scope")]
         [HttpGet]
         public IActionResult Index()
         {
             return new JsonResult("Got it");
+        }
+
+        [Authorize(Policy = "SecretApiScope")]
+        [HttpGet]
+        public IActionResult GetSecret()
+        {
+            return new JsonResult("Got secret :O");
         }
     }
 }

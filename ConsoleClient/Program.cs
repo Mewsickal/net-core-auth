@@ -40,7 +40,7 @@ namespace ConsoleClient
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var apiResponse = await apiClient.GetAsync("https://localhost:6001");
+            var apiResponse = await apiClient.GetAsync("https://localhost:6001/Home/GetSecret");
 
             if (!apiResponse.IsSuccessStatusCode)
             {

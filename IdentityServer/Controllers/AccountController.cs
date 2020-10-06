@@ -8,7 +8,8 @@ namespace IdentityServer.Controllers
 {
     public class AccountController : Controller
     {
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Login(string returnUrl)
         {
             return View();
         }

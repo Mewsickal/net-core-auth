@@ -19,6 +19,7 @@ namespace IdentityServer
             services.AddControllersWithViews();
 
             var builder = services.AddIdentityServer()
+                .AddInMemoryIdentityResources(Config.IdentityResources)
                 .AddInMemoryApiScopes(Config.ApiScopes)
                 .AddInMemoryClients(Config.Clients);
 
